@@ -1,0 +1,10 @@
+div{
+    color: black;
+    background-color: rgb(67, 133, 225) !important;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+img{
+    width: 75px;
+}
