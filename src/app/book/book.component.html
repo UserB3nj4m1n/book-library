@@ -1,17 +1,18 @@
 <mat-card class="example-card" appearance="outlined">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title> {{item.title}} </mat-card-title>
-      <mat-card-subtitle> {{item.author}} {{item.price}} € </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        {{item.desc}} 
-      </p>
-      <img src="{{item.image}}">
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button> {{item.availibility}} </button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ item.title }}</mat-card-title>
+    <mat-card-subtitle>{{ item.author }} - {{ item.price }} €</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ item.desc }}</p>
+    <img [src]="item.image" alt="{{ item.title }}">
+  </mat-card-content>
+  <mat-card-actions>
+    <!-- Button now toggles availability on click -->
+    <button mat-raised-button (click)="toggleAvailability()">
+      {{ item.availibility }}
+    </button>
+    <button mat-button>Share</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,45 @@
+<mat-card class="add-book-card">
+    <h2>Add a New Book</h2>
+    <form [formGroup]="bookForm" (ngSubmit)="addBook()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="desc"></textarea>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" formControlName="price">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Author</mat-label>
+        <input matInput formControlName="author">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Image URL</mat-label>
+        <input matInput formControlName="image">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Availability</mat-label>
+        <mat-select formControlName="availibility">
+          <!-- Using the label for display, value for binding -->
+          <mat-option *ngFor="let option of availibilityOptions" [value]="option.value">
+            {{ option.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+  
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit" [disabled]="bookForm.invalid">Add Book</button>
+      </div>
+    </form>
+  </mat-card>
+  

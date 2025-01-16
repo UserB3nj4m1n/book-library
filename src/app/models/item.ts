@@ -4,10 +4,10 @@ export interface Item {
     price: number;
     author: string;
     image: string;
-    availibility: Availibility;
+    availibility: Availability;
 }
 
-export enum Availibility {
-    AVAILIBLE,
-    UNAVAILIBLE
-  }
+export enum Availability {
+    AVAILABLE = "Available",
+    UNAVAILABLE = "Unavailable"
+}

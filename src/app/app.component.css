@@ -2,3 +2,7 @@
     flex: 1 1 auto;
   }
   
+mat-toolbar{
+  background-color: #a2b0ff;
+  color: white;
+}

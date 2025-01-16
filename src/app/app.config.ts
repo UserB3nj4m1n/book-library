@@ -10,8 +10,8 @@ import { firebaseConfig } from './firebase.config';
 export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(
-      AngularFirestoreModule,
-      AngularFireModule.initializeApp(firebaseConfig)
+      AngularFireModule.initializeApp(firebaseConfig),
+      AngularFirestoreModule
     ),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),

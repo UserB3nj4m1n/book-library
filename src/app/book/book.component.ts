@@ -1,18 +1,21 @@
 import { Component, Input } from '@angular/core';
-import { LibraryComponent } from "../library/library.component";
-import { Item } from '../models/item';
+import { Item, Availability } from '../models/item';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-
 
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [LibraryComponent, MatButtonModule, MatIconModule, MatCardModule],
+  imports: [MatButtonModule, MatCardModule],
   templateUrl: './book.component.html',
   styleUrl: './book.component.css'
 })
 export class BookComponent {
   @Input() item!: Item;
+
+  toggleAvailability(): void {
+    this.item.availibility = this.item.availibility === Availability.AVAILABLE 
+      ? Availability.UNAVAILABLE 
+      : Availability.AVAILABLE;
+  }
 }
